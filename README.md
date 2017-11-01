@@ -6,7 +6,7 @@ With Interactive Grid - Extend Toolbar Plugin you can in declarative way:
 - call custom Dynamic Action or one of default IG actions
 - add icon only buttons to IG toolbar
 - add hot butons to IG toolbar
-- ...
+- ...many more
 
 
 # Changelog
@@ -94,3 +94,10 @@ With Interactive Grid - Extend Toolbar Plugin you can in declarative way:
 # Demo
 
 Demo is available [here](https://apex.oracle.com/pls/apex/f?p=apexbyg:extendigtoolbar). 
+
+
+# Examples
+
+Dynamic Action (on load) definition:
+
+![DA definition](https://github.com/mgoricki/apex-plugin-extend-ig-toolbar/blob/master/images/da_definition.png "DA definition")
