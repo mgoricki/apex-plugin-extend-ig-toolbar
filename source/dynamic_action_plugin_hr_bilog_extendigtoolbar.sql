@@ -14,9 +14,9 @@ begin
 wwv_flow_api.import_begin (
  p_version_yyyy_mm_dd=>'2016.08.24'
 ,p_release=>'5.1.3.00.05'
-,p_default_workspace_id=>1911086416010549
-,p_default_application_id=>105
-,p_default_owner=>'GRID'
+,p_default_workspace_id=>3411311815725739709
+,p_default_application_id=>100309
+,p_default_owner=>'MGORICKI'
 );
 end;
 /
@@ -28,13 +28,13 @@ end;
 prompt --application/shared_components/plugins/dynamic_action/hr_bilog_extendigtoolbar
 begin
 wwv_flow_api.create_plugin(
- p_id=>wwv_flow_api.id(13853247592332369)
+ p_id=>wwv_flow_api.id(31375001339862049829)
 ,p_plugin_type=>'DYNAMIC ACTION'
 ,p_name=>'HR.BILOG.EXTENDIGTOOLBAR'
 ,p_display_name=>'Interactive Grid - Extend Toolbar'
 ,p_category=>'INIT'
 ,p_supported_ui_types=>'DESKTOP'
-,p_javascript_file_urls=>'grid.extendToolbar#MIN#.js'
+,p_javascript_file_urls=>'#PLUGIN_FILES#grid.extendToolbar#MIN#.js'
 ,p_plsql_code=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'function f_render_plugin (',
 '    p_dynamic_action in apex_plugin.t_dynamic_action,',
@@ -66,12 +66,12 @@ wwv_flow_api.create_plugin(
 ,p_subscribe_plugin_settings=>true
 ,p_help_text=>'Dynamic Action Plugin that enables you to declaratively define IG toolbar buttons.'
 ,p_version_identifier=>'1.0.0'
-,p_about_url=>'https://apex.oracle.com/pls/apex/f?p=apexbyg'
+,p_about_url=>'https://apex.oracle.com/pls/apex/f?p=apexbyg:extendigtoolbar'
 ,p_files_version=>3
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(13881777928994343)
-,p_plugin_id=>wwv_flow_api.id(13853247592332369)
+ p_id=>wwv_flow_api.id(31375029870198711803)
+,p_plugin_id=>wwv_flow_api.id(31375001339862049829)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>1
 ,p_display_sequence=>10
@@ -84,64 +84,64 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'Choose one of default IG toolbar groups. With this plugin you can add button to the start or end of the group.'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(13883623665996528)
-,p_plugin_attribute_id=>wwv_flow_api.id(13881777928994343)
+ p_id=>wwv_flow_api.id(31375031715935713988)
+,p_plugin_attribute_id=>wwv_flow_api.id(31375029870198711803)
 ,p_display_sequence=>10
 ,p_display_value=>'1. Search Box Group'
 ,p_return_value=>'search'
 ,p_is_quick_pick=>true
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(13884048441997524)
-,p_plugin_attribute_id=>wwv_flow_api.id(13881777928994343)
+ p_id=>wwv_flow_api.id(31375032140711714984)
+,p_plugin_attribute_id=>wwv_flow_api.id(31375029870198711803)
 ,p_display_sequence=>20
 ,p_display_value=>'2. Saved Reports Group'
 ,p_return_value=>'reports'
 ,p_is_quick_pick=>true
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(13884458269998639)
-,p_plugin_attribute_id=>wwv_flow_api.id(13881777928994343)
+ p_id=>wwv_flow_api.id(31375032550539716099)
+,p_plugin_attribute_id=>wwv_flow_api.id(31375029870198711803)
 ,p_display_sequence=>30
 ,p_display_value=>'3. View Switch Group'
 ,p_return_value=>'views'
 ,p_is_quick_pick=>true
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(13884878807999706)
-,p_plugin_attribute_id=>wwv_flow_api.id(13881777928994343)
+ p_id=>wwv_flow_api.id(31375032971077717166)
+,p_plugin_attribute_id=>wwv_flow_api.id(31375029870198711803)
 ,p_display_sequence=>40
 ,p_display_value=>'4. Actions Menu Group'
 ,p_return_value=>'actions1'
 ,p_is_quick_pick=>true
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(13885231666000750)
-,p_plugin_attribute_id=>wwv_flow_api.id(13881777928994343)
+ p_id=>wwv_flow_api.id(31375033323935718210)
+,p_plugin_attribute_id=>wwv_flow_api.id(31375029870198711803)
 ,p_display_sequence=>50
 ,p_display_value=>'5. Edit & Save Group'
 ,p_return_value=>'actions2'
 ,p_is_quick_pick=>true
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(13885663275001850)
-,p_plugin_attribute_id=>wwv_flow_api.id(13881777928994343)
+ p_id=>wwv_flow_api.id(31375033755544719310)
+,p_plugin_attribute_id=>wwv_flow_api.id(31375029870198711803)
 ,p_display_sequence=>60
 ,p_display_value=>'6. Add Row Group'
 ,p_return_value=>'actions3'
 ,p_is_quick_pick=>true
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(13886097443002868)
-,p_plugin_attribute_id=>wwv_flow_api.id(13881777928994343)
+ p_id=>wwv_flow_api.id(31375034189712720328)
+,p_plugin_attribute_id=>wwv_flow_api.id(31375029870198711803)
 ,p_display_sequence=>70
 ,p_display_value=>'7. Reset Group'
 ,p_return_value=>'actions4'
 ,p_is_quick_pick=>true
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(13889530833045999)
-,p_plugin_id=>wwv_flow_api.id(13853247592332369)
+ p_id=>wwv_flow_api.id(31375037623102763459)
+,p_plugin_id=>wwv_flow_api.id(31375001339862049829)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>2
 ,p_display_sequence=>20
@@ -156,22 +156,22 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'Choose group position. Start or end of the toolbar group.'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(13892602333046728)
-,p_plugin_attribute_id=>wwv_flow_api.id(13889530833045999)
+ p_id=>wwv_flow_api.id(31375040694602764188)
+,p_plugin_attribute_id=>wwv_flow_api.id(31375037623102763459)
 ,p_display_sequence=>10
 ,p_display_value=>'Start'
 ,p_return_value=>'F'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(13893024669047199)
-,p_plugin_attribute_id=>wwv_flow_api.id(13889530833045999)
+ p_id=>wwv_flow_api.id(31375041116938764659)
+,p_plugin_attribute_id=>wwv_flow_api.id(31375037623102763459)
 ,p_display_sequence=>20
 ,p_display_value=>'End'
 ,p_return_value=>'L'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(13896032420051034)
-,p_plugin_id=>wwv_flow_api.id(13853247592332369)
+ p_id=>wwv_flow_api.id(31375044124689768494)
+,p_plugin_id=>wwv_flow_api.id(31375001339862049829)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>3
 ,p_display_sequence=>30
@@ -179,15 +179,15 @@ wwv_flow_api.create_plugin_attribute(
 ,p_attribute_type=>'TEXT'
 ,p_is_required=>true
 ,p_is_translatable=>true
-,p_depending_on_attribute_id=>wwv_flow_api.id(13933781012296627)
+,p_depending_on_attribute_id=>wwv_flow_api.id(31375081873282014087)
 ,p_depending_on_has_to_exist=>true
 ,p_depending_on_condition_type=>'EQUALS'
 ,p_depending_on_expression=>'N'
 ,p_help_text=>'Label of a button. You can also use text messages defined in shared components.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(13922209996103953)
-,p_plugin_id=>wwv_flow_api.id(13853247592332369)
+ p_id=>wwv_flow_api.id(31375070302265821413)
+,p_plugin_id=>wwv_flow_api.id(31375001339862049829)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>4
 ,p_display_sequence=>40
@@ -201,8 +201,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'Hot or not? :)'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(13927320065136497)
-,p_plugin_id=>wwv_flow_api.id(13853247592332369)
+ p_id=>wwv_flow_api.id(31375075412334853957)
+,p_plugin_id=>wwv_flow_api.id(31375001339862049829)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>5
 ,p_display_sequence=>50
@@ -214,8 +214,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'Define APEX icon class for a button.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(13933781012296627)
-,p_plugin_id=>wwv_flow_api.id(13853247592332369)
+ p_id=>wwv_flow_api.id(31375081873282014087)
+,p_plugin_id=>wwv_flow_api.id(31375001339862049829)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>6
 ,p_display_sequence=>25
@@ -227,8 +227,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'Display only button with icon.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(13944764690323316)
-,p_plugin_id=>wwv_flow_api.id(13853247592332369)
+ p_id=>wwv_flow_api.id(31375092856960040776)
+,p_plugin_id=>wwv_flow_api.id(31375001339862049829)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>7
 ,p_display_sequence=>70
@@ -237,29 +237,29 @@ wwv_flow_api.create_plugin_attribute(
 ,p_is_required=>true
 ,p_default_value=>'B'
 ,p_is_translatable=>false
-,p_depending_on_attribute_id=>wwv_flow_api.id(13927320065136497)
+,p_depending_on_attribute_id=>wwv_flow_api.id(31375075412334853957)
 ,p_depending_on_has_to_exist=>true
 ,p_depending_on_condition_type=>'NOT_NULL'
 ,p_lov_type=>'STATIC'
 ,p_help_text=>'Display position of an icon - before or after label.'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(13948224101324020)
-,p_plugin_attribute_id=>wwv_flow_api.id(13944764690323316)
+ p_id=>wwv_flow_api.id(31375096316371041480)
+,p_plugin_attribute_id=>wwv_flow_api.id(31375092856960040776)
 ,p_display_sequence=>10
 ,p_display_value=>'Before Label'
 ,p_return_value=>'B'
 );
 wwv_flow_api.create_plugin_attr_value(
- p_id=>wwv_flow_api.id(13948689508324618)
-,p_plugin_attribute_id=>wwv_flow_api.id(13944764690323316)
+ p_id=>wwv_flow_api.id(31375096781778042078)
+,p_plugin_attribute_id=>wwv_flow_api.id(31375092856960040776)
 ,p_display_sequence=>20
 ,p_display_value=>'After Label'
 ,p_return_value=>'A'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(13953059718345246)
-,p_plugin_id=>wwv_flow_api.id(13853247592332369)
+ p_id=>wwv_flow_api.id(31375101151988062706)
+,p_plugin_id=>wwv_flow_api.id(31375001339862049829)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>8
 ,p_display_sequence=>80
@@ -272,8 +272,8 @@ wwv_flow_api.create_plugin_attribute(
 ,p_help_text=>'HTML button title attribute. Shown on mouse hover.'
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(13971080195465348)
-,p_plugin_id=>wwv_flow_api.id(13853247592332369)
+ p_id=>wwv_flow_api.id(31375119172465182808)
+,p_plugin_id=>wwv_flow_api.id(31375001339862049829)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>9
 ,p_display_sequence=>90
@@ -315,8 +315,8 @@ wwv_flow_api.create_plugin_attribute(
 '</p>'))
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(14076312262894686)
-,p_plugin_id=>wwv_flow_api.id(13853247592332369)
+ p_id=>wwv_flow_api.id(31375224404532612146)
+,p_plugin_id=>wwv_flow_api.id(31375001339862049829)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>10
 ,p_display_sequence=>100
@@ -332,8 +332,8 @@ wwv_flow_api.create_plugin_attribute(
 'This property can be used to disable default IG actions. To do this just set name of default IG action in Action property.'))
 );
 wwv_flow_api.create_plugin_attribute(
- p_id=>wwv_flow_api.id(14087133396980478)
-,p_plugin_id=>wwv_flow_api.id(13853247592332369)
+ p_id=>wwv_flow_api.id(31375235225666697938)
+,p_plugin_id=>wwv_flow_api.id(31375001339862049829)
 ,p_attribute_scope=>'COMPONENT'
 ,p_attribute_sequence=>11
 ,p_display_sequence=>110
@@ -384,8 +384,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(14210724436651172)
-,p_plugin_id=>wwv_flow_api.id(13853247592332369)
+ p_id=>wwv_flow_api.id(31375358816706368632)
+,p_plugin_id=>wwv_flow_api.id(31375001339862049829)
 ,p_file_name=>'grid.extendToolbar.js'
 ,p_mime_type=>'application/javascript'
 ,p_file_charset=>'utf-8'
@@ -412,8 +412,8 @@ end;
 /
 begin
 wwv_flow_api.create_plugin_file(
- p_id=>wwv_flow_api.id(14211020523651178)
-,p_plugin_id=>wwv_flow_api.id(13853247592332369)
+ p_id=>wwv_flow_api.id(31375359112793368638)
+,p_plugin_id=>wwv_flow_api.id(31375001339862049829)
 ,p_file_name=>'grid.extendToolbar.min.js'
 ,p_mime_type=>'application/javascript'
 ,p_file_charset=>'utf-8'
