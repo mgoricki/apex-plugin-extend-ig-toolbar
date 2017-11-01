@@ -98,14 +98,14 @@ Demo is available [here](https://apex.oracle.com/pls/apex/f?p=apexbyg:extendigto
 
 # Examples
 
-Dynamic Action (on load) definition:
+- Dynamic Action (on load) definition:
 
-![DA definition](https://github.com/mgoricki/apex-plugin-extend-ig-toolbar/blob/master/images/da_definition.png "DA definition")
+    ![DA definition](https://github.com/mgoricki/apex-plugin-extend-ig-toolbar/blob/master/images/da_definition.png "DA definition")
 
-Call Custom DA:
+- Call Custom DA:
 
-![Call Custom DA](https://github.com/mgoricki/apex-plugin-extend-ig-toolbar/blob/master/images/button01.png "Call Custom DA")
+    ![Call Custom DA](https://github.com/mgoricki/apex-plugin-extend-ig-toolbar/blob/master/images/button01.png "Call Custom DA")
 
-Call default IG action:
+- Call default IG action:
 
-![Call default IG action](https://github.com/mgoricki/apex-plugin-extend-ig-toolbar/blob/master/images/button01.png "Call default IG action")
+    ![Call default IG action](https://github.com/mgoricki/apex-plugin-extend-ig-toolbar/blob/master/images/button01.png "Call default IG action")
