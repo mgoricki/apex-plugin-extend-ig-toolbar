@@ -28,7 +28,9 @@
         "internalName" : "HR.BILOG.EXTENDIGTOOLBAR",
         "type" : "dynamic action",
         "demo" : "https://apex.oracle.com/pls/apex/f?p=apexbyg:extendigtoolbar",
-        "previewImage" : "https://github.com/mgoricki/apex-plugin-extend-ig-toolbar/blob/master/preview01.gif"
+        "previewImage" : "https://raw.githubusercontent.com/mgoricki/apex-plugin-extend-ig-toolbar/master/preview01.gif"
+
+
       }
     }
   }
