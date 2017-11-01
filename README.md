@@ -1,7 +1,7 @@
 # Extend Interactive Grid Toolbar Plugin
 Oracle APEX Plugin for customizing Interactive Grid toolbar.
 
-With Interactive Grid - Extend Toolbar Plugin you can in declarative way:
+With Interactive Grid - Extend Toolbar Plugin you can (declaratively):
 - add buttons to one of 7 default grid button groups
 - call custom Dynamic Action or one of default IG actions
 - add icon only buttons to IG toolbar
