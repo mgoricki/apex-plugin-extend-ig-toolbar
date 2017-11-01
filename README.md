@@ -1,14 +1,22 @@
 # Extend Interactive Grid Toolbar Plugin
-Oracle APEX Plugin for customizing Interactive Grid toolbar
+Oracle APEX Plugin for customizing Interactive Grid toolbar.
+
+With Interactive Grid - Extend Toolbar Plugin you can in declarative way:
+- add buttons to one of 7 default grid button groups
+- call custom Dynamic Action or one of default IG actions
+- add icon only buttons to IG toolbar
+- add hot butons to IG toolbar
+- ...
+
 
 # Changelog
 
 - v1.0.0 - 20171101 - Initial Release
 
 # Install
-- Import plugin file item_type_plugin_hr_bilog_mgoricki_advanced_slider.sql from source directory
-- (Optional) To optimize performance upload static files (CSS and JS) from server directory to Webserver and change File Prefix to point on server directory
-- (Optional) Compile package pck_advanced_plugin (from source) in DB schema (available to APEX parsing schema) and change parameter Render Procedure/Function Name to pck_advanced_plugin.p_render_item
+- Import plugin file dynamic_action_plugin_hr_bilog_extendigtoolbar.sql from source directory
+- (Optional) To optimize performance upload static files (JS) from server directory to Webserver and change prefix to point on server directory
+- (Optional) Put PL/SQL code of rendering function to the DB package
 
 # Settings
 
@@ -23,7 +31,7 @@ Oracle APEX Plugin for customizing Interactive Grid toolbar
     6. Add Row Group	    
     7. Reset Group
 
-- **Group Position** - Defines group position - put new button to the start or end of the toolbar group selected in first property
+- **Group Position** -  put new button to the start or end of the toolbar group selected in the first property
 
 - **Icon Only** - Icon only button (Yes/No)
 
@@ -31,11 +39,11 @@ Oracle APEX Plugin for customizing Interactive Grid toolbar
 
 - **Hot** - Hot icon (Yes/No)
 
-- **Icon** - Defines APEX icon class for a button, for example fa fa-user
+- **Icon** - Defines APEX icon class for a button, for example fa fa-user.
 
 - **Icon Position** - Display position of an icon - before or after label.
 
-- **Title** - HTML button title attribute. Shown on mouse hover.
+- **Title** - HTML button title attribute - shown on mouse hover.
 
 - **Trigger Action**:  
 
