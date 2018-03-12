@@ -8,6 +8,7 @@
 /*
  * ChageLog:
  * v1.0.0 - 20171101 - Initial Release
+ * v1.0.2 - 20180312 - fix for adding buttons to multiple IG regions on same page (fix for APEX 5.1.4) - more on https://community.oracle.com/message/14739371#14739371
  */
 var extendGridToolbar = {
 
@@ -37,18 +38,17 @@ var extendGridToolbar = {
     // toDo: check if there's already fa class
     if (vIcon){
       vIcon = 'fa '+vIcon;
-    }
+    }  
 
     var vActionName = 'my-custom-action';
-
     // Get Widget
     var vWidget$ = apex.region(vRegionId).widget();
 
     // Grid created
     var toolbar = vWidget$.interactiveGrid("getToolbar");
 
-    // find toolbar group
-    var toolbarGroup = toolbar.toolbar('findGroup', vGroup);
+    // find toolbar group - commented for fix v1.0.2
+    // var toolbarGroup = toolbar.toolbar('findGroup', vGroup);
 
     var vaButton = {
       type: 'BUTTON',
@@ -62,12 +62,32 @@ var extendGridToolbar = {
       hot: vHot
     };
 
-    // add button
+    // v1.0.2 Fix for APEX 5.1.4         
+    let config = $.extend(true, {}, toolbar.toolbar('option'))    
+    var toolbarData = config.data;
+    var toolbarGroup = toolbarData.filter(function (group) {  
+      return group.id === vGroup  
+    })[0]  
+    if (toolbarGroup) {  
+      if (vPosition == 'F'){
+        toolbarGroup.controls.unshift(vaButton)
+      }else{
+        toolbarGroup.controls.push(vaButton);
+      };      
+    }  
+
+    toolbar.toolbar('option', 'data', config.data);  
+
+    // v1.0.2 (from APEX version 5.2)
+    /*
     if (vPosition == 'F'){
       toolbarGroup.controls.unshift(vaButton)
     }else{
       toolbarGroup.controls.push(vaButton);
     };
+    */
+
+  
 
     // add actions
     var vActions = vWidget$.interactiveGrid('getActions');
@@ -94,5 +114,7 @@ var extendGridToolbar = {
     toolbar.toolbar('refresh');
   }
 };
+
+//# sourceMappingURL=grid.extendToolbar.js.map
 
 //# sourceMappingURL=grid.extendToolbar.js.map
