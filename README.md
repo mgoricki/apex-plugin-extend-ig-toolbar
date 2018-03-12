@@ -13,6 +13,7 @@ With Interactive Grid - Extend Toolbar Plugin you can (declaratively):
 
 - v1.0.0 - 20171101 - Initial Release
 - v1.0.1 - 20171129 - Added .map files to fix Safari problem
+- v1.0.2 - 20180312 - Fix for adding buttons to multiple IG regions on same page
 
 # Install
 - Import plugin file dynamic_action_plugin_hr_bilog_extendigtoolbar.sql from source directory
