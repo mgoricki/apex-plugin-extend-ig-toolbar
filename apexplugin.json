@@ -1,6 +1,6 @@
 {
   "name" : "Extend IG Toobar",
-  "version" : "1.0.1",
+  "version" : "1.0.2",
   "description" : "Oracle APEX Plugin for customizing Interactive Grid toolbar.",
   "keywords" : ["interactive grid", "ig", "toolbar"],
   "homepage" : "https://github.com/mgoricki/apex-plugin-extend-ig-toolbar",
