@@ -9,6 +9,7 @@
  * ChageLog:
  * v1.0.0 - 20171101 - Initial Release
  * v1.0.2 - 20180312 - fix for adding buttons to multiple IG regions on same page (fix for APEX 5.1.4) - more on https://community.oracle.com/message/14739371#14739371
+ * v1.0.3 - 20200103 - fixed hidden Rows Per Page Selector, removed code for fix 1.0.2
  */
 var extendGridToolbar = {
 
@@ -47,8 +48,8 @@ var extendGridToolbar = {
     // Grid created
     var toolbar = vWidget$.interactiveGrid("getToolbar");
 
-    // find toolbar group - commented for fix v1.0.2
-    // var toolbarGroup = toolbar.toolbar('findGroup', vGroup);
+    // find toolbar group
+     var toolbarGroup = toolbar.toolbar('findGroup', vGroup);
 
     var vaButton = {
       type: 'BUTTON',
@@ -62,32 +63,11 @@ var extendGridToolbar = {
       hot: vHot
     };
 
-    // v1.0.2 Fix for APEX 5.1.4         
-    let config = $.extend(true, {}, toolbar.toolbar('option'))    
-    var toolbarData = config.data;
-    var toolbarGroup = toolbarData.filter(function (group) {  
-      return group.id === vGroup  
-    })[0]  
-    if (toolbarGroup) {  
-      if (vPosition == 'F'){
-        toolbarGroup.controls.unshift(vaButton)
-      }else{
-        toolbarGroup.controls.push(vaButton);
-      };      
-    }  
-
-    toolbar.toolbar('option', 'data', config.data);  
-
-    // v1.0.2 (from APEX version 5.2)
-    /*
     if (vPosition == 'F'){
       toolbarGroup.controls.unshift(vaButton)
     }else{
       toolbarGroup.controls.push(vaButton);
     };
-    */
-
-  
 
     // add actions
     var vActions = vWidget$.interactiveGrid('getActions');
@@ -104,17 +84,21 @@ var extendGridToolbar = {
         , hide:vHidden
         , disabled:vDisabled
        });
-     }else{
-       vAction$.hide = vHidden;
-       vAction$.disabled = vDisabled;
-     }
+    }else{
+      vAction$.hide = vHidden;
+      vAction$.disabled = vDisabled;
+    }
 
-
+    // fix v1.0.3 because refresh hides page selector
+    var vActionsMenu$ = toolbar.toolbar( "findElement", "actions_button_menu" );
+    var vMenuItem = vActionsMenu$.menu( "find", "rows" );
+    if (vMenuItem) {
+      var vConfig = apex.region(vRegionId).call("option","config");
+      vMenuItem.hide = (vConfig.pagination.type !== 'set');
+    }  
+    
     // refresh grid
-    toolbar.toolbar('refresh');
+    toolbar.toolbar('refresh'); 
   }
 };
-
-//# sourceMappingURL=grid.extendToolbar.js.map
-
 //# sourceMappingURL=grid.extendToolbar.js.map
